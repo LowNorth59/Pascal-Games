@@ -1,3 +1,6 @@
+
+
+
 Unit table;
 
 Interface
@@ -13,13 +16,13 @@ Implementation
 
 Procedure StartTable(Var Table : TTable);
 var
-	i, j : integer;
+	Row, Col : integer;
 Begin
-	For i := 1 to 3 do
+	For Row := 1 to 3 do
 	Begin
-		For j := 1 to 3 do
+		For Col := 1 to 3 do
 		Begin
-			Table[i, j] := '$';
+			Table[Row, Col] := '$';
 		End;
 	End;
 
@@ -27,24 +30,23 @@ End;
 
 Procedure DrawTable(Const Table : TTable);
 Var
-	i, j : integer;
+	Row, Col : integer;
 Begin
 	Writeln;
-	For i := 1 to 3 do
+	For Row := 1 to 3 do
 	Begin
 		Write(' ');
-		For j := 1 to 3 do
+		For Col := 1 to 3 do
 		Begin
-			Write(' ', Table[i,j], ' ');
-			If j < 3 then Write('|');
+			Write(' ', Table[Row,Col], ' ');
+			If Col < 3 then Write('|');
 		End;
 		Writeln;
-		if i < 3 then
+		if Row < 3 then
 			Writeln('------------');
 	End;
 	Writeln;
 End;
-
 
 End.
 
