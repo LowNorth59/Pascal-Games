@@ -1,4 +1,9 @@
-PROGRAM CuatroEnRaya;
+{
+  Copyright (c) 2026 NorthZide.
+  Licensed under the MIT License. 
+  See LICENSE file in the project root for full license information.
+}
+PROGRAM FourInARow;
 Uses
 	Crt, SysUtils;
 
