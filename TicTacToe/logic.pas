@@ -1,3 +1,9 @@
+{
+  Copyright (c) 2026 NorthZide.
+  Licensed under the MIT License. 
+  See LICENSE file in the project root for full license information.
+}
+
 Unit logic;
 
 Interface
@@ -12,7 +18,7 @@ Implementation
 		Table 		: TTable;
 		Player 		: Char;
 		Counter 	: Integer;
-		Fila, Col 	: Integer;
+		Row, Col 	: Integer;
 		Winner 	: Boolean;
 	Begin
 		Counter 	:= 0;
@@ -30,20 +36,20 @@ Implementation
 			DrawTable(Table);
 
 			Write('Turno de ', Player,' >> ');
-			Readln(Fila);
-			If (Fila = 0) then Break;
+			Readln(Row);
+			If (Row = 0) then Break;
 			Write('>>');
 			Readln(Col);
 			DrawTable(Table);
 			
 					
-			If (Fila in [1..3]) And (Col in [1..3]) then
+			If (Row in [1..3]) And (Col in [1..3]) then
 
 			Begin
-				if(Table[Fila, Col] = '$') Then
+				if(Table[Row, Col] = '$') Then
 				Begin
-					Table[Fila, Col] 	:= Player;
-					Winner 			:= Winning(Table);
+					Table[Row, Col] 	:= Player;
+					Winner 				:= Winning(Table);
 					If Not Winner Then Inc(Counter);
 				End
 				else 
